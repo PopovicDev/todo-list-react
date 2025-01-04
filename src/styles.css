@@ -1,0 +1,252 @@
+:root{
+    --font1:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --blck:rgb(0,0,0);
+    --gldn:rgb(255, 215, 0);
+    --wht:rgb(255,255,255);
+}
+
+*,*:before,*:after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    border-radius:5px;
+}
+
+html{
+    height:100%;
+}
+
+body{
+    height:100dvh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--blck);
+    position: relative;
+}
+
+#root > h1{
+    text-align: center;
+    color:var(--gldn);
+    font-family:var(--font1);
+    font-weight:900;
+}
+
+button{
+    padding:5px 20px;
+    background: var(--gldn);
+    color:var(--blck);
+    font-family:var(--font1);
+    font-weight:900;
+    outline:none;
+    border:none;
+    cursor:pointer;
+}
+
+.activated-button{
+    background: var(--blck);
+    color:var(--wht);
+    border:1px solid var(--gldn);
+}
+
+.table{
+    background-color:rgba(55, 55, 55, 0.5);
+    width:800px;
+    padding:15px;
+    margin:0 auto;
+}
+
+.inputs{
+    display:flex;
+    width:100%;
+    column-gap:20px;
+    justify-content: center;
+}
+
+.inputs button{
+    width:30%;
+}
+
+.inputs input:nth-child(1){
+    width:50%;
+}
+
+.inputs input:nth-child(2){
+    width:20%;
+}
+
+input{
+    border:none;
+    padding:5px;
+    height:45px;
+}
+
+.tasks{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding:20px 5px;
+    height:500px;
+    overflow-y:scroll;
+    border-top:3px solid var(--gldn);
+    border-bottom:3px solid var(--gldn);
+    border-radius:0px;
+    margin:15px 0;
+    padding:10px;
+}
+
+.tasks::-webkit-scrollbar{
+    width:15px;
+}
+
+.tasks::-webkit-scrollbar-track{
+    background-color:rgba(75,75,75, 0.5);
+}
+
+.tasks::-webkit-scrollbar-thumb{
+    background-color:var(--gldn);
+}
+
+.tasks button{
+    padding:10px;
+}
+
+.task{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    border-radius:0px;
+    padding:10px 0px;
+    border-bottom:1px solid rgb(100,100,100);
+    font-family:var(--font1);
+    font-weight:500;
+}
+
+.task-buttons{
+    display:flex;
+    column-gap:5px;
+}
+
+.task button{
+    background-color:rgba(75,75,75, 0.5);
+    color:var(--gldn);
+}
+
+.task > div{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task p:nth-child(1){
+    width:50%;
+    color:var(--wht);
+    font-size:1rem;
+    padding-right:10px;
+}
+
+#issued{
+    font-size:1rem;
+    color:var(--gldn);
+}
+
+.filtering{
+    display:flex;
+    width:100%;
+    column-gap:20px;
+    justify-content: center;
+    padding:10px;
+}
+
+
+.filtering button{
+    width:33%;
+    height:45px;
+}
+
+.editcomp{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color:rgba(20, 20, 20, 0.85);
+}
+
+@media only screen and (max-width: 600px) {
+    .table{
+        width:90%;
+        padding:15px 0;
+    }
+
+    .inputs{
+        flex-direction: column;
+        column-gap:0;
+        row-gap:5px;
+    }
+
+    .inputs button{
+        width:100%;
+        padding:5px;
+        height:45px;
+    }
+    
+    .inputs input:nth-child(1){
+        width:100%;
+    }
+    
+    .inputs input:nth-child(2){
+        width:100%;
+    }
+
+    .tasks{
+        height:auto;
+        max-height:250px;
+        margin:5px 0;
+    }
+
+    .task{
+        width:100%;
+        align-items:start;
+    }
+
+    .task p:nth-child(1){
+        width:50%;
+    }
+
+    .task > div{
+        align-items: end;
+        text-align:end;
+        flex-direction: column;
+        row-gap:5px;
+        width:50%;
+    }
+
+    .filtering{
+        align-items: center;
+        row-gap:5px;
+        flex-direction: column;
+        padding:0 10px;
+    }
+
+    .filtering button{
+        width:270px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .table{
+        width:600px;
+        padding:0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .table{
+        width:768px;
+        padding:0;
+    }
+}
